@@ -27,13 +27,6 @@ void print(Node* head);
  */
 void dealloc(Node* head);
 
-struct pred{
-  bool operator()(int x){
-    if(x%2 == 0){ return true;}
-    else{ return false;}
-  }
-};
-
 
 Node* readList(const char* filename)
 {
@@ -77,53 +70,26 @@ void dealloc(Node* head)
 
 
 
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
+
+int main(int argc, char* argv[])
+{
+    if(argc < 2) {
         cout << "Please provide an input file" << endl;
         return 1;
     }
 
-    // Read list from file
+    // -----------------------------------------------
+    // Feel free to update any code below this point
+    // -----------------------------------------------
     Node* head = readList(argv[1]);
     cout << "Original list: ";
     print(head);
 
-    // Declare and initialize pointers
-    Node* smaller = nullptr;
-    Node* larger = nullptr;
-    int input;
-    pred c;
+    // Test out your linked list code
 
-    cout << "Enter 1 for pivot operation or 2 for filter operation: ";
-    cin >> input;
 
-    if (input == 1) {
-        llpivot(head, smaller, larger, 8);
 
-        // Show results 
-        cout << "After pivoting, smaller list: ";
-        print(smaller);
-
-        cout << "After pivoting, larger list: ";
-        print(larger);
-
-        cout << "Remaining head list: ";
-        print(head); // also show to see that it doesnt have any node inside
-    } 
-    else if (input == 2) {
-        head = llfilter(head, c);
-
-        // Show result after filtering
-        cout << "Updated head list after filter operation: ";
-        print(head);
-    }
-
+    
     return 0;
-<<<<<<< HEAD
+
 }
-
-
-
-=======
-}
->>>>>>> 4f625840be2f8b71b708e59b4cd5b618df406c7a

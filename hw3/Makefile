@@ -6,18 +6,10 @@ all: llrec-test
 
 #-----------------------------------------------------
 # ADD target(s) to build your llrec-test executable
-
 #-----------------------------------------------------
-llrec-test: llrec-test.o llrec.o
-	$(CXX) $(CXXFLAGS) -o $@ llrec-test.o llrec.o
 
-llrec-test.o: llrec-test.cpp llrec.h
-	$(CXX) $(CXXFLAGS) -c llrec-test.cpp -o $@
-
-llrec.o: llrec.h llrec.cpp
-	$(CXX) $(CXXFLAGS) -c llrec.cpp -o $@
 
 clean:
-	rm -f *.o llrec-test *~
+	rm -f *.o rh llrec-test *~
 
-.PHONY: clean
+.PHONY: clean 
